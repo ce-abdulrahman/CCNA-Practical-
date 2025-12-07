@@ -356,189 +356,6 @@ Switch(config-if-range)# channel-group 1 mode active</code></pre>
         <!-- Practice Quiz Section -->
         <section id="quiz-section" class="content-section">
             <div class="container">
-                <h2><i class="fas fa-question-circle"></i> Practice Quiz</h2>
-
-                <div class="quiz-container">
-                    <div class="question">
-                        <h5>Question 1: Which command assigns VLAN 20 to an interface?</h5>
-                        <div class="options">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q1">
-                                <label class="form-check-label">switchport vlan 20</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q1">
-                                <label class="form-check-label">vlan access 20</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q1" id="q1-correct">
-                                <label class="form-check-label">switchport access vlan 20</label>
-                            </div>
-                        </div>
-                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="showAnswer(1)">Show
-                            Answer</button>
-                        <div id="answer1" class="answer" style="display: none;">
-                            <strong>Correct:</strong> switchport access vlan 20
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h5>Question 2: What is the native VLAN by default?</h5>
-                        <div class="options">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2" id="q2-correct">
-                                <label class="form-check-label">VLAN 1</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2">
-                                <label class="form-check-label">VLAN 100</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="q2">
-                                <label class="form-check-label">VLAN 99</label>
-                            </div>
-                        </div>
-                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="showAnswer(2)">Show
-                            Answer</button>
-                        <div id="answer2" class="answer" style="display: none;">
-                            <strong>Correct:</strong> VLAN 1
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <h5>Question 3: How many usable hosts in a /29 subnet?</h5>
-                        <button class="btn btn-sm btn-outline-primary mt-2" onclick="showAnswer(3)">Show
-                            Answer</button>
-                        <div id="answer3" class="answer" style="display: none;">
-                            <strong>Calculation:</strong> /29 = 255.255.255.248<br>
-                            256 - 248 = 8 (block size)<br>
-                            Usable hosts = 8 - 2 = 6 hosts
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final Exam Pack Section -->
-        <section id="exam-section" class="content-section bg-dark text-light">
-            <div class="container">
-                <h2><i class="fas fa-graduation-cap"></i> Final Exam Learning Pack</h2>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="exam-card">
-                            <h5>🔥 10-Point Ultra Summary</h5>
-                            <ol>
-                                <li>VLANs separate broadcast domains logically</li>
-                                <li>Access ports: 1 VLAN, Trunk ports: multiple VLANs</li>
-                                <li>Inter-VLAN routing requires router or Layer 3 switch</li>
-                                <li>Router-on-a-stick uses subinterfaces with dot1Q</li>
-                                <li>STP prevents Layer 2 loops</li>
-                                <li>Root bridge has lowest Bridge ID (priority + MAC)</li>
-                                <li>PortFast skips listening/learning on access ports</li>
-                                <li>Subnetting: 2^h - 2 = usable hosts (h = host bits)</li>
-                                <li>VLSM allows different subnet sizes in same network</li>
-                                <li>/30 = WAN links (2 usable hosts)</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="exam-card">
-                            <h5>📝 Expected Exam Questions</h5>
-                            <ul>
-                                <li>Given scenario: Configure VLANs and trunking</li>
-                                <li>Troubleshoot: PCs in same VLAN can't communicate</li>
-                                <li>Calculate: Subnet for X hosts from Y network</li>
-                                <li>Identify: Root bridge in STP topology</li>
-                                <li>Configure: Router subinterface for VLAN Z</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h5>🎯 Key Definitions & Formulas</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <table class="table table-dark">
-                                <tr>
-                                    <th>Term</th>
-                                    <th>Definition</th>
-                                </tr>
-                                <tr>
-                                    <td>VLAN</td>
-                                    <td>Virtual Local Area Network</td>
-                                </tr>
-                                <tr>
-                                    <td>STP</td>
-                                    <td>Spanning Tree Protocol</td>
-                                </tr>
-                                <tr>
-                                    <td>VLSM</td>
-                                    <td>Variable Length Subnet Masking</td>
-                                </tr>
-                                <tr>
-                                    <td>BPDU</td>
-                                    <td>Bridge Protocol Data Unit</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-md-6">
-                            <table class="table table-dark">
-                                <tr>
-                                    <th>Formula</th>
-                                    <th>Purpose</th>
-                                </tr>
-                                <tr>
-                                    <td>2^n - 2</td>
-                                    <td>Usable hosts per subnet</td>
-                                </tr>
-                                <tr>
-                                    <td>256 - SM</td>
-                                    <td>Find block size (SM=subnet mask)</td>
-                                </tr>
-                                <tr>
-                                    <td>2^b</td>
-                                    <td>Number of subnets (b=borrowed bits)</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Flashcards -->
-                <div class="mt-4">
-                    <h5>📇 Interactive Flashcards</h5>
-                    <div class="flashcard-container">
-                        <div class="flashcard" onclick="flipCard(this)">
-                            <div class="flashcard-front">
-                                <h6>What does STP stand for and what problem does it solve?</h6>
-                                <small>Click to flip</small>
-                            </div>
-                            <div class="flashcard-back">
-                                <p>Spanning Tree Protocol. Prevents Layer 2 switching loops and broadcast storms in
-                                    redundant network topologies.</p>
-                            </div>
-                        </div>
-                        <div class="flashcard" onclick="flipCard(this)">
-                            <div class="flashcard-front">
-                                <h6>How many usable hosts in 192.168.1.0/27?</h6>
-                                <small>Click to flip</small>
-                            </div>
-                            <div class="flashcard-back">
-                                <p>/27 = 255.255.255.224<br>
-                                    256 - 224 = 32 block size<br>
-                                    32 - 2 = 30 usable hosts</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Enhanced Quiz Section -->
-        <section id="quiz-section" class="content-section">
-            <div class="container">
                 <h2><i class="fas fa-question-circle"></i> 50-Question CCNA2 Master Quiz</h2>
 
                 <!-- Quiz Navigation -->
@@ -797,6 +614,126 @@ Switch(config-if-range)# channel-group 1 mode active</code></pre>
                 </div>
             </div>
         </section>
+
+        <!-- Final Exam Pack Section -->
+        <section id="exam-section" class="content-section bg-dark text-light">
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap"></i> Final Exam Learning Pack</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="exam-card">
+                            <h5>🔥 10-Point Ultra Summary</h5>
+                            <ol>
+                                <li>VLANs separate broadcast domains logically</li>
+                                <li>Access ports: 1 VLAN, Trunk ports: multiple VLANs</li>
+                                <li>Inter-VLAN routing requires router or Layer 3 switch</li>
+                                <li>Router-on-a-stick uses subinterfaces with dot1Q</li>
+                                <li>STP prevents Layer 2 loops</li>
+                                <li>Root bridge has lowest Bridge ID (priority + MAC)</li>
+                                <li>PortFast skips listening/learning on access ports</li>
+                                <li>Subnetting: 2^h - 2 = usable hosts (h = host bits)</li>
+                                <li>VLSM allows different subnet sizes in same network</li>
+                                <li>/30 = WAN links (2 usable hosts)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="exam-card">
+                            <h5>📝 Expected Exam Questions</h5>
+                            <ul>
+                                <li>Given scenario: Configure VLANs and trunking</li>
+                                <li>Troubleshoot: PCs in same VLAN can't communicate</li>
+                                <li>Calculate: Subnet for X hosts from Y network</li>
+                                <li>Identify: Root bridge in STP topology</li>
+                                <li>Configure: Router subinterface for VLAN Z</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h5>🎯 Key Definitions & Formulas</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-dark">
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                                <tr>
+                                    <td>VLAN</td>
+                                    <td>Virtual Local Area Network</td>
+                                </tr>
+                                <tr>
+                                    <td>STP</td>
+                                    <td>Spanning Tree Protocol</td>
+                                </tr>
+                                <tr>
+                                    <td>VLSM</td>
+                                    <td>Variable Length Subnet Masking</td>
+                                </tr>
+                                <tr>
+                                    <td>BPDU</td>
+                                    <td>Bridge Protocol Data Unit</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-dark">
+                                <tr>
+                                    <th>Formula</th>
+                                    <th>Purpose</th>
+                                </tr>
+                                <tr>
+                                    <td>2^n - 2</td>
+                                    <td>Usable hosts per subnet</td>
+                                </tr>
+                                <tr>
+                                    <td>256 - SM</td>
+                                    <td>Find block size (SM=subnet mask)</td>
+                                </tr>
+                                <tr>
+                                    <td>2^b</td>
+                                    <td>Number of subnets (b=borrowed bits)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flashcards -->
+                <div class="mt-4">
+                    <h5>📇 Interactive Flashcards</h5>
+                    <div class="flashcard-container">
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-front">
+                                <h6>What does STP stand for and what problem does it solve?</h6>
+                                <small>Click to flip</small>
+                            </div>
+                            <div class="flashcard-back">
+                                <p>Spanning Tree Protocol. Prevents Layer 2 switching loops and broadcast storms in
+                                    redundant network topologies.</p>
+                            </div>
+                        </div>
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-front">
+                                <h6>How many usable hosts in 192.168.1.0/27?</h6>
+                                <small>Click to flip</small>
+                            </div>
+                            <div class="flashcard-back">
+                                <p>/27 = 255.255.255.224<br>
+                                    256 - 224 = 32 block size<br>
+                                    32 - 2 = 30 usable hosts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Quiz Section -->
+        
 
         <footer class="text-center py-4">
             <p>CCNA2 Study Portal • Created by Your P-AITA • Based on Labs 1-7</p>
